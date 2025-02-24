@@ -17,7 +17,11 @@
 </head>
 <body>
   <!-- Botão que inicia a animação -->
-  <button id="myButton">Mover</button>
+  <button id="myButtonE">Mover Esquerda</button>
+  <button id="myButtonD">Mover Direita</button>
+  <button id="myButtonC">Mover Cima</button>
+  <button id="myButtonB">Mover Baixo</button>
+
 
   <!-- Div que será movida ao clicar no botão -->
   <div id="myDiv"></div>
@@ -25,19 +29,62 @@
   <!-- Script JavaScript embutido na página -->
   <script>
     // Seleciona o botão e a div pelo ID
-    const button = document.querySelector('#myButton');
+    const button = document.querySelector('#myButtonE');
+    const buttonD = document.querySelector('#myButtonD');
+    const buttonC = document.querySelector('#myButtonC');
+    const buttonB = document.querySelector('#myButtonB');
+
     const div = document.querySelector('#myDiv');
 
     // Variável para controlar a posição da div
+    let posicao = 0;
 
-    // 1ª Digitação (Aqui)
+    if 
 
     // Adiciona um evento de clique ao botão
- 
+    button.addEventListener('click', () => {
       // Aumenta a posição em 50 pixels
-      
+      // igual a esse aqui position = position +50
+      posicao += 50;
 
       // Move a div para a nova posição
+      div.style.left = `${posicao}px`
+    });
+
+
+
+
+    buttonD.addEventListener('click', () => {
+      // Aumenta a posição em 50 pixels
+      // igual a esse aqui position = position +50
+      posicao += 50;
+
+      // Move a div para a nova posição
+      div.style.right = `${posicao}px`
+    });
+
+    
+    
+    buttonC.addEventListener('click', () => {
+      // Aumenta a posição em 50 pixels
+      // igual a esse aqui position = position +50
+      posicao += 50;
+
+      // Move a div para a nova posição
+      div.style.up = `${posicao}px`
+    });
+
+
+
+    buttonB.addEventListener('click', () => {
+      // Aumenta a posição em 50 pixels
+      // igual a esse aqui position = position +50
+      posicao += 50;
+
+      // Move a div para a nova posição
+      div.style.down = `${posicao}px`
+    });
+  
 
   </script>
 </body>
