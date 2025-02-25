@@ -37,18 +37,19 @@
     const div = document.querySelector('#myDiv');
 
     // Variável para controlar a posição da div
-    let posicao = 0;
+    let posicaoX = 0;
+    let posicaoY = 0;
 
-    if 
+    
 
     // Adiciona um evento de clique ao botão
     button.addEventListener('click', () => {
       // Aumenta a posição em 50 pixels
       // igual a esse aqui position = position +50
-      posicao += 50;
+      posicaoX += 50;
 
       // Move a div para a nova posição
-      div.style.left = `${posicao}px`
+      div.style.left = `${posicaoX}px`
     });
 
 
@@ -57,10 +58,10 @@
     buttonD.addEventListener('click', () => {
       // Aumenta a posição em 50 pixels
       // igual a esse aqui position = position +50
-      posicao += 50;
+      posicaoX -= 50;
 
       // Move a div para a nova posição
-      div.style.right = `${posicao}px`
+      div.style.left = `${posicaoX}px`
     });
 
     
@@ -68,10 +69,10 @@
     buttonC.addEventListener('click', () => {
       // Aumenta a posição em 50 pixels
       // igual a esse aqui position = position +50
-      posicao += 50;
+      posicaoY -= 50;
 
       // Move a div para a nova posição
-      div.style.up = `${posicao}px`
+      div.style.top = `${posicaoY}px`
     });
 
 
@@ -79,10 +80,10 @@
     buttonB.addEventListener('click', () => {
       // Aumenta a posição em 50 pixels
       // igual a esse aqui position = position +50
-      posicao += 50;
+      posicaoY += 50;
 
       // Move a div para a nova posição
-      div.style.down = `${posicao}px`
+      div.style.top = `${posicaoY}px`
     });
   
 
