@@ -10,7 +10,7 @@
         html {
 
             width: 100vw;
-            height: 100vh;
+            height: 70vh;
         }
 
         .container {
@@ -55,7 +55,7 @@
             <!-- botão -->
             <div class="botao d-flex align-items-center flex-column">
                 <button class = "btn" id = "botao">
-                    <img src = "/ex5a-al-fazer-contador-(exercicio)/img/images__1_-removebg-preview.png" class = "coo">
+                    <img src = "img/images__1_-removebg-preview.png" class = "coo">
                 </button>
 
                 <button class = "btn btn-light" id = "up1">
@@ -80,6 +80,7 @@
         let cont = 0;
         let cont2 = 0;
         let cont3 = 0;
+        let contup1 = 0;
         let conttext = document.querySelector('#contador');
         const botao = document.querySelector('#botao');
         const upgrade1 = document.querySelector('#up1')
@@ -88,8 +89,10 @@
         upgrade1.style.visibility = 'hidden';
         upgrade2.style.visibility = 'hidden';
 
-
-        // evento ao clicar no botão
+// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------
+        // evento ao clicar no botão para contar e deixar com corzinha
         botao.addEventListener('click', () => {
             
             cont += 1
@@ -101,19 +104,26 @@
                 conttext.style.backgroundColor = 'red';
             }
 
-            if (cont === 10) {
-                upgrade1.style.visibility = 'visible';
+        });
 
-                upgrade1.addEventListener('click', () => {
-                    cont += 10;
-                })
+// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------
+        // primeiro upgrade
+        if (cont === 10) {
+            upgrade1.style.visibility = 'visible';
+
+            upgrade1.addEventListener('click', () => {
+                contup1 = 10;
+            });
+            // adicionar 10 a cada clique, 11 na verdade
+            cont = cont+contup1;
+
             } if (cont >= 30) {
                 upgrade2.addEventListener('click', () => {
                     cont += 100;
                 })
-            }
-
-        });
+        }
 
     </script>
     
