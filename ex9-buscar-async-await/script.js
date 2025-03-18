@@ -7,7 +7,7 @@ document.getElementById("fetchUser").addEventListener("click", async function ()
   try {
 
     // Async e await são usados em JavaScript para simplificar o trabalho com código assíncrono.
-
+    
     // No exemplo:
     // async define funções como assíncronas, permitindo o uso de await.
     // await pausa a execução até que a operação assíncrona (como fetch) seja concluída e retorna o resultado.
