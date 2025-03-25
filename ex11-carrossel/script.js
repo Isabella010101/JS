@@ -7,13 +7,23 @@ let autoSlideInterval; // Variável para armazenar o intervalo de transição au
 
 // Função para exibir um slide específico
 
-  // 1ª Digitação (Aqui)
-
+function showSlide(index) {
+  slides.forEach((slide, i)=>{
+   //Adicionar a classe "Active" ao slide atual e remove dos demais
+   slide.classList.toggle('active', i === index);
+  });
+  }
 // Função para avançar para o próximo slide
-
+function nextSlide () {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
 
 // Função para voltar ao slide anterior
-
+function prevSlide () {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length; //Se o currentSlide = 0 (0-1 resultaria em negativo -1)
+  showSlide(currentSlide);
+}
 
 // Função para iniciar a transição automática de slides
 function startAutoSlide() {
@@ -26,6 +36,11 @@ function stopAutoSlide() {
 }
 
 // Adiciona um evento de clique ao botão "Anterior"
+prevButton.addEventListener('click', ()=>{
+  prevSlide();
+  stopAutoSlide();
+  stopAutoSlide();
+})
 
 
 // Adiciona um evento de clique ao botão "Próximo"
@@ -37,3 +52,5 @@ nextButton.addEventListener('click', () => {
 
 // Inicializa o carrossel com a primeira imagem visível
 
+showSlide(currentSlide);
+startAutoSlide();

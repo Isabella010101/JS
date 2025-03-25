@@ -48,9 +48,42 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+    // Seleciona os botões corretamente
+    const startButton = document.querySelector('#startButton');
+    const pauseButton = document.querySelector('#pauseButton');
+    const resetButton = document.querySelector('#resetButton');
+    const timerDisplay = document.getElementById('timer');
 
+    let time = 0;
+    let timer = null;
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    function startTimer() {
+        if (!timer) { // Evita múltiplos timers
+            timer = setInterval(() => {
+                time++;
+                timerDisplay.textContent = time;
+            }, 1000);
+        }
+    }
+
+    function pauseTimer() {
+        clearInterval(timer);
+        timer = null;
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        timer = null;
+        time = 0;
+        timerDisplay.textContent = time;
+    }
+
+    // Adiciona eventos aos botões
+    startButton.addEventListener('click', startTimer);
+    pauseButton.addEventListener('click', pauseTimer);
+    resetButton.addEventListener('click', resetTimer);
+      
+        
 
 
   </script>
